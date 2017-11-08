@@ -1,3 +1,4 @@
 class Customer < ApplicationRecord
-  validates :name, :password, :address, presence: true 
+  has_many :orders
+  validates :name, :password, :address, presence: true
 end

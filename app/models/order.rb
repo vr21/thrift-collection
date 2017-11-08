@@ -1,3 +1,4 @@
 class Order < ApplicationRecord
-  validates :total, presence: true 
+  belongs_to :customer
+  validates :total, presence: true
 end
