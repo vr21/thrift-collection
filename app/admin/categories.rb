@@ -1,6 +1,5 @@
 ActiveAdmin.register Category do
 
-
-permit_params :type
+permit_params :name
 
 end
