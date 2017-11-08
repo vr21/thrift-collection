@@ -1,4 +1,4 @@
 ActiveAdmin.register Condition do
 
-permit_params :description
+permit_params :name
 end

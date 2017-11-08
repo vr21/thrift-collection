@@ -1,4 +1,4 @@
 class Condition < ApplicationRecord
   has_many :products
-  validates :description, presence: true
+  validates :name, presence: true
 end
