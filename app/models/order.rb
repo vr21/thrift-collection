@@ -1,4 +1,5 @@
 class Order < ApplicationRecord
-  belongs_to :customer 
+  belongs_to :customer
+  has_many :line_items
   validates :total, presence: true
 end
