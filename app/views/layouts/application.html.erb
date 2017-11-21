@@ -16,8 +16,15 @@
   </head>
 
   <body>
+    <%= render partial: 'partials/header' %>
+  <div class="row">
     <%= yield %>
+    <%= render partial: 'partials/search' unless @disable_search%>
+  </div>
+
     <!-- Navigation -->
+
+      <%= render partial: 'partials/footer' %>
 
   </body>
 </html>

@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  root to: 'products#index', as: 'home'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  root to: 'products#index'
+
   get 'about', to: 'company_info#about', as:'about'
   get 'contact', to:'company_info#contact', as: 'contact'
 
+  get 'products/:id', to: 'products#show', as: 'products', id: /\d+/
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
