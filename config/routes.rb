@@ -7,5 +7,9 @@ Rails.application.routes.draw do
   get 'contact', to:'company_info#contact', as: 'contact'
 
   get 'products/:id', to: 'products#show', as: 'products', id: /\d+/
+
+  get 'category/:id', to: 'categories#category_products', as: 'category', id: /\d+/
+
+  get 'search', to:'products#search', as: 'search'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

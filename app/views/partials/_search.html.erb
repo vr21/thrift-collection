@@ -3,7 +3,7 @@
   <h1 class="my-4">Shop Name</h1>
   <div class="list-group">
     <% @categories.each do |cat| %>
-    <a href="#" class="list-group-item"><%= cat.name %></a>
+    <%= link_to cat.name, category_path(cat), :class => "list-group-item" %>
     <% end %>
   </div>
 

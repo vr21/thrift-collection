@@ -5,4 +5,10 @@ class Product < ApplicationRecord
   validates :name, :size, :color, :price, :image, presence: true
 
   mount_uploader :image, ImageUploader
+
+
+    def self.keyword_search(keywords)
+      keywords = "%" + keywords + "%"
+      @result = Product.where("name LIKE ?", keywords)
+    end
 end
