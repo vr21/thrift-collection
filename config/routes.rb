@@ -11,5 +11,10 @@ Rails.application.routes.draw do
   get 'category/:id', to: 'categories#category_products', as: 'category', id: /\d+/
 
   get 'search', to:'products#search', as: 'search'
+
+  get 'new', to:'products#new_products', as:'new'
+
+
+    get 'updated', to:'products#updated_products', as:'updated'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -5,6 +5,9 @@
     <% @categories.each do |cat| %>
     <%= link_to cat.name, category_path(cat), :class => "list-group-item" %>
     <% end %>
+    <%= link_to 'New', new_path, :class => "list-group-item" %>
+
+    <%= link_to 'Updated', updated_path, :class => "list-group-item" %>
   </div>
 
 </div>

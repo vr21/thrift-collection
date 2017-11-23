@@ -17,15 +17,17 @@
 
           <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
           <div class="row">
-            <% @result.each do|product|%>
+            <% @new.each do|product|%>
             <div class="col-lg-4 col-md-6 mb-4">
               <div class="card h-100">
-                <a href="/products/<%= product.id%>"><img class="card-img-top" src="<%=product.image %>" alt=""></a>
+              <a href="/products/<%= product.id%>"><img class="card-img-top" src="<%=product.image %>" alt=""></a>
                 <div class="card-body">
                   <h4 class="card-title">
                     <a href="/products/<%= product.id%>"><%= product.name%></a>
                     <!-- <%= link_to product.name,products_path(product)%> -->
                   </h4>
+
+                  <p><%= product.description %></p>
                   <h5><%= number_to_currency product.price%></h5>
                   <!-- <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p> -->
                 </div>
@@ -35,9 +37,7 @@
               </div>
             </div>
             <% end %>
-              <%= link_to 'New', new_path, :class => "nav_link" %>
           </div>
-          <%= paginate @result %>
           <!-- /.row -->
         </div>
         <!-- /.col-lg-9 -->

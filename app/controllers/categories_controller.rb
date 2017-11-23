@@ -3,4 +3,6 @@ class CategoriesController < ApplicationController
     @categories = Category.all
     @category_products = Product.where(category_id: params[:id])
   end
+
+
 end

@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all.page(params[:page]).per(6)
+    @products = Product.order("name").page(params[:page]).per(6)
     @categories = Category.all
   end
 
@@ -18,8 +18,13 @@ class ProductsController < ApplicationController
     end
   end
 
-  def self.keyword_search(keywords)
-    keywords = "%" + keywords + "%"
-    @result = Product.where("name LIKE ?", keywords)
+  def new_products
+    @categories = Category.all
+    @new = Product.order("created_at DESC")
+  end
+
+  def updated_products
+    @categories = Category.all
+    @updated = Product.order("updated_at DESC")
   end
 end
