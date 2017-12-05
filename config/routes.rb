@@ -19,5 +19,9 @@ Rails.application.routes.draw do
   post 'cart/add_to_cart/:id', to: 'cart#add_to_cart', as:'add_to_cart', id: /\d+/
 
   get 'cart/cart_page', to: 'cart#cart_page', as: 'showCart'
+
+  post 'cart/update/:id', to: 'cart#update', as: 'update', id: /\d+/
+
+  post 'cart/delete/:id', to: 'cart#delete', as: 'delete', id: /\d+/
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
