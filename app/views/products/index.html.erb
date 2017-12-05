@@ -27,9 +27,7 @@
                     <!-- <%= link_to product.name,products_path(product)%> -->
                   </h4>
                   <h5><%= number_to_currency product.price%></h5>
-                  <button type="button" class="btn btn-danger">
-                      <span class="glyphicon glyphicon-remove"></span> Remove
-                  </button></td>
+                  <%=form_tag(add_path(@product.id), method: post) %>
                   <!-- <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p> -->
                 </div>
                 <div class="card-footer">

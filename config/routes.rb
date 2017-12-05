@@ -14,7 +14,8 @@ Rails.application.routes.draw do
 
   get 'new', to:'products#new_products', as:'new'
 
+  get 'updated', to:'products#updated_products', as:'updated'
 
-    get 'updated', to:'products#updated_products', as:'updated'
+  post 'cart/add_to_cart/:id', to: 'cart#add_to_cart', as:'add', id: /\d+/
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
