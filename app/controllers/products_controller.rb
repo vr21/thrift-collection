@@ -7,6 +7,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @disable_search = true
+      @categories = Category.all
   end
 
   def search
@@ -20,11 +21,11 @@ class ProductsController < ApplicationController
 
   def new_products
     @categories = Category.all
-    @new = Product.order("created_at DESC")
+    @new = Product.order("created_at DESC").page(params[:page]).per(6)
   end
 
   def updated_products
     @categories = Category.all
-    @updated = Product.order("updated_at DESC")
+    @updated = Product.order("updated_at DESC").page(params[:page]).per(6)
   end
 end

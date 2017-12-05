@@ -4,4 +4,10 @@ class CompanyInfoController < ApplicationController
     @about = CompanyInfo.first
     @disable_search = true;
   end
+
+  def contact
+    @categories = Category.all
+    @about = CompanyInfo.first
+    @disable_search = true;
+  end
 end
