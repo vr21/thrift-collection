@@ -27,8 +27,7 @@
                     <!-- <%= link_to product.name,products_path(product)%> -->
                   </h4>
                   <h5><%= number_to_currency product.price%></h5>
-                  <%=form_tag(add_to_cart_path(product.id), method: :post) %>
-                  <%= submit_tag("Add") %>
+                  
                   <!-- <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p> -->
                 </div>
                 <div class="card-footer">

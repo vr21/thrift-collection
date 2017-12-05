@@ -39,6 +39,8 @@
             </div>
           </div>
           <!-- /.row -->
+          <%=form_tag(add_to_cart_path(@product.id), method: :post) %>
+          <%= submit_tag("Add") %>
           </div>
           <!-- /.col
 
