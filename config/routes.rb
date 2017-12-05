@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   get 'updated', to:'products#updated_products', as:'updated'
 
-  post 'cart/add_to_cart/:id', to: 'cart#add_to_cart', as:'add', id: /\d+/
+  post 'cart/add_to_cart/:id', to: 'cart#add_to_cart', as:'add_to_cart', id: /\d+/
+
+  get 'cart/cart_page', to: 'cart#cart_page', as: 'showCart'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
