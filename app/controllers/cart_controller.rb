@@ -17,20 +17,6 @@ before_action :initial_session
     session[:cart] ||= {}
    end
 
-   def update
-     @quantity = params[:quantity].to_i
-     session[:cart] ||= {}
-     session[:cart][params[:id]] ||= 0
-     session[:cart][params[:id]] =@quantity
-
-          redirect_to action:"cart_page"
-   end
-
-   def delete
-     session[:cart].except!(params[:id])
-     redirect_to action: "cart_page"
-   end
-
    private
    def initial_session
      session[:cart] ||= {}
