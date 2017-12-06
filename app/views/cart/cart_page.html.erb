@@ -4,14 +4,20 @@
   <% session[:cart].each do|id, quantity| %>
     <% item = Product.where(:id => id).first %>
     <tr>
+      <td><img src="<%=item.image %>"></td>
        <td><%= item.name %></td>
+
        <td><%=form_tag(update_path(id), method: :post) do%>
-              <input type=number value=<%=quantity%> name=quantity max=5 min=0  />
+         <div class="col-md-12">
+              <input type=number value=<%=quantity%> name=quantity max=2 min=0  />
+              <td>
             <%= submit_tag("Update Quantity")%>
+          </td>
+          </div>
             <%end%>
        </td>
        <td><%=form_tag(delete_path(id), method: :post) do%>
-            
+
             <%= submit_tag("Delete")%>
             <%end%>
        </td>
