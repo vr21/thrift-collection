@@ -23,5 +23,7 @@ Rails.application.routes.draw do
   post 'cart/update/:id', to: 'cart#update', as: 'update', id: /\d+/
 
   post 'cart/delete/:id', to: 'cart#delete', as: 'delete', id: /\d+/
+
+  resources :charges
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
